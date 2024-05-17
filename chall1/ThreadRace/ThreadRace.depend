@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1715353136 source:c:\users\qhung\downloads\job\bluecyber\chall1\threadrace\threadrace.cpp
+	<iostream>
+	<windows.h>
+	<tlhelp32.h>
+	<fstream>
+	<vector>
+

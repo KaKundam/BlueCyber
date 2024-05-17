@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1715326684 source:c:\users\qhung\downloads\job\bluecyber\chall1\taskkill\taskkill.cpp
+	<iostream>
+	<string.h>
+	<windows.h>
+	<stdio.h>
+	<tlhelp32.h>
+

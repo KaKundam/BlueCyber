@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1715326783 source:c:\users\qhung\downloads\job\bluecyber\chall1\tasklist\tasklist.cpp
+	<windows.h>
+	<iostream>
+	<tlhelp32.h>
+	<tchar.h>
+
