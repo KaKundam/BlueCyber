@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1715918706 source:c:\users\qhung\downloads\job\bluecyber\chall2\systeminfo\systeminfo.cpp
+	<windows.h>
+	<iostream>
+	<tchar.h>
+

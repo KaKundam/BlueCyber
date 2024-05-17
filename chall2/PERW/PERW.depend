@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1715936220 source:c:\users\qhung\downloads\job\bluecyber\chall2\perw\perw.cpp
+	<iostream>
+	<windows.h>
+
