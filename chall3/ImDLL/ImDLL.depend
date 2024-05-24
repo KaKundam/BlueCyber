@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1716524634 source:c:\users\qhung\downloads\job\bluecyber\chall3\imdll\main.cpp
+	"main.h"
+	<iostream>
+
+1716524646 c:\users\qhung\downloads\job\bluecyber\chall3\imdll\main.h
+	<windows.h>
+
