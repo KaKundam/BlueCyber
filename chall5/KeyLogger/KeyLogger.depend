@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1717728361 source:c:\users\qhung\downloads\job\bluecyber\chall5\keylogger\keylogger.cpp
+	<iostream>
+	<Windows.h>
+
