@@ -1,0 +1,11 @@
+[Unit]
+Description=Log system boot time
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/startup-log.sh
+Type=oneshot
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
