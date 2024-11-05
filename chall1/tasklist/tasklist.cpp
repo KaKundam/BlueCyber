@@ -19,14 +19,14 @@ void PrintProcessTable() {
         return;
     }
 
-    std::cout << std::left << std::setw(30) << "Process Name"
+    std::cout << std::left << std::setw(35) << "Process Name"
               << std::setw(10) << "PID"
               << std::setw(15) << "Thread Count"
               << std::setw(15) << "Parent PID" << std::endl;
     std::cout << "---------------------------------------------------------------" << std::endl;
 
     do {
-        std::cout << std::left << std::setw(30) << pe32.szExeFile
+        std::cout << std::left << std::setw(35) << pe32.szExeFile
                   << std::setw(10) << pe32.th32ProcessID
                   << std::setw(15) << pe32.cntThreads
                   << std::setw(15) << pe32.th32ParentProcessID << std::endl;
