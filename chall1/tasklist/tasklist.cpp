@@ -1,30 +1,41 @@
 #include <windows.h>
-#include <iostream>
 #include <tlhelp32.h>
-#include <tchar.h>
+#include <iostream>
+#include <iomanip>
 
-int main() {
-    HANDLE hProcessSnap;
-    PROCESSENTRY32 pe32;
-
-    hProcessSnap=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    pe32.dwSize=sizeof(PROCESSENTRY32);
-
-    if (!Process32First(hProcessSnap, &pe32)) {
-        CloseHandle(hProcessSnap);
-        return 1;
+void PrintProcessTable() {
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot == INVALID_HANDLE_VALUE) {
+        std::cerr << "Không thể tạo snapshot" << std::endl;
+        return;
     }
 
+    PROCESSENTRY32 pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32);
+
+    if (!Process32First(hSnapshot, &pe32)) {
+        std::cerr << "Không thể lấy thông tin tiến trình" << std::endl;
+        CloseHandle(hSnapshot);
+        return;
+    }
+
+    std::cout << std::left << std::setw(30) << "Process Name"
+              << std::setw(10) << "PID"
+              << std::setw(15) << "Thread Count"
+              << std::setw(15) << "Parent PID" << std::endl;
+    std::cout << "---------------------------------------------------------------" << std::endl;
 
     do {
-        printf("\n\n=====================================================");
-        printf("\nPROCESS NAME:  %s", pe32.szExeFile);
-        printf("\n-----------------------------------------------------");
-        printf("\n  Process ID        = %d", pe32.th32ProcessID);
-        printf("\n  Thread count      = %d", pe32.cntThreads);
-        printf("\n  Parent process ID = %d", pe32.th32ParentProcessID);
-    } while (Process32Next(hProcessSnap, &pe32));
+        std::cout << std::left << std::setw(30) << pe32.szExeFile
+                  << std::setw(10) << pe32.th32ProcessID
+                  << std::setw(15) << pe32.cntThreads
+                  << std::setw(15) << pe32.th32ParentProcessID << std::endl;
+    } while (Process32Next(hSnapshot, &pe32)); // Lặp lại cho các tiến trình tiếp theo
 
-    CloseHandle(hProcessSnap);
+    CloseHandle(hSnapshot); // Giải phóng handle snapshot
+}
+
+int main() {
+    PrintProcessTable(); // Gọi hàm in bảng tiến trình
     return 0;
 }

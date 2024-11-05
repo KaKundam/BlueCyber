@@ -5,3 +5,11 @@
 	<tlhelp32.h>
 	<tchar.h>
 
+1730777596 source:c:\users\qhung\onedrive - hanoi university of science and technology\standard\job\company\bluecyber\chall1\tasklist\tasklist.cpp
+	<windows.h>
+	<psapi.h>
+	<iostream>
+	<iomanip>
+	<vector>
+	<string>
+
