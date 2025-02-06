@@ -1,10 +1,9 @@
 #include "main.h"
 #include <iostream>
 
-// a sample exported function
 void DLL_EXPORT SomeFunction()
 {
-    std::cout<<"Hi! Im a DLL";
+    std::cout<<"Hi! Im a DLL\n";
 }
 
 extern "C" DLL_EXPORT BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)

@@ -27,7 +27,7 @@ void PrintMemoryInfo(DWORD processID) {
     CloseHandle(hProcess);
 }
 
-int main() {
+int main(int argv, const char *argc) {
     DWORD processID;
     cout<<"Input processID: ";
     cin>>processID;
